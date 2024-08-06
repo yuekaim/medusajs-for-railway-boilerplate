@@ -21,8 +21,8 @@ export default async function ReleasePage({ params }: PageProps) {
     const { slug } = params;
     const release = await fetchRelease(slug);
     return(
-        <div className='m-4 grid grid-cols-2'>
-            <div>
+        <div className='m-4 sm:flex mt-8'>
+            <div className='mr-8'>
                 <img
                     src={urlFor(release?.covorImage?.asset?._ref || '').url()}
                     alt={release?.covorImage?.caption || ''}
@@ -32,9 +32,12 @@ export default async function ReleasePage({ params }: PageProps) {
                 />
             </div>
             <div className='text-xl'>
-                <div>{release?.name}</div>
-                <div>{release?.artist}</div>
-                <div>{release?.releaseDate}</div>
+                <div className='pb-4'>
+                    <div className='pb-4'>{release?.name}</div>
+                    <div>{release?.type}</div>
+                    <div>{release?.artist}</div>
+                    <div>{release?.releaseDate}</div>
+                </div>
                 <PortableText
                     value={release?.info || []}
                 />
