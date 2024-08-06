@@ -3,7 +3,7 @@ import { groq } from 'next-sanity';
 import {client} from '../../../../../../sanity/lib/client';
 import Image from 'next/image';
 import { urlFor } from '../../../../../../sanity/lib/image';
-import { GetStaticProps } from 'next';
+import { PortableText } from 'next-sanity';
 
 const RELEASE_QUERY = groq`*[_type == "release" && slug.current == $slug][0]`
 
@@ -21,17 +21,24 @@ export default async function ReleasePage({ params }: PageProps) {
     const { slug } = params;
     const release = await fetchRelease(slug);
     return(
-        <div>
+        <div className='m-4 grid grid-cols-2'>
             <div>
-                hello
-                {/* <Image
-                    src={urlFor(release.covorImage?.asset).url()}
-                    alt={release.covorImage?.caption}
-                    width={500}
-                    height={500}
-                /> */}
+                <img
+                    src={urlFor(release?.covorImage?.asset?._ref || '').url()}
+                    alt={release?.covorImage?.caption || ''}
+                    width={600}
+                    height={600}
+                    className='shadow-elevation-card-rest'
+                />
             </div>
-            <div></div>
+            <div className='text-xl'>
+                <div>{release?.name}</div>
+                <div>{release?.artist}</div>
+                <div>{release?.releaseDate}</div>
+                <PortableText
+                    value={release?.info || []}
+                />
+            </div>
         </div>
     )
 }
