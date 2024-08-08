@@ -9,16 +9,16 @@ const RELEASES_QUERY = groq`*[_type == "release"]`
 export default async function Releases() {
   const releases = await client.fetch<Release[]>(RELEASES_QUERY);
   return (
-    <div>
-      <div className='border-b-2 border-black grid grid-cols-4 text-xl px-8 align-super uppercase pt-2'>
+    <div className='mx-8'>
+      <div className='border-b-2 border-black grid grid-cols-4 px-8 align-super uppercase pt-8'>
           <div>Release</div>
           <div>Type</div>
           <div>Artist</div>
-          <div>Release Date</div>
+          <div>Date</div>
       </div>
       {releases.map((release) => (
         <Link href={'releases/' + release.slug?.current} key={release.slug?.current}>
-          <div className='border-b-2 border-black grid grid-cols-4 text-xl px-8 hover:bg-grey-20 py-4'>
+          <div className='border-b-2 border-black grid grid-cols-4 px-8 hover:bg-black hover:text-white py-2 text-xl duration-300'>
               <div>{release.name}</div>
               <div>{release.type}</div>
               <div>{release.artist}</div>
