@@ -22,8 +22,8 @@ export default async function ReleasePage({ params }: PageProps) {
     const { slug } = params;
     const release = await fetchRelease(slug);
     return(
-        <div className='content-container m-4 sm:flex mt-8'>
-            <div className='mr-8'>
+        <div className='release-container px-4 sm:px-0 sm:m-4 sm:flex sm:mt-8'>
+            <div className='sm:mr-8 mb-8 sm:mb-0 sm:sticky sm:top-0'>
                 <img
                     src={urlFor(release?.covorImage?.asset?._ref || '').url()}
                     alt={release?.covorImage?.caption || ''}

@@ -51,7 +51,7 @@
 
 @layer components {
   .content-container {
-    @apply w-full mx-auto px-6;
+    @apply w-full sm:mx-auto sm:px-6 px-4;
   }
 
   .contrast-btn {
@@ -108,5 +108,27 @@
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
+  }
+
+  .release-container a{
+    @apply underline;
+  }
+
+  .title-type::after {
+    content: '█';
+    animation: cursor 0.5s infinite step-start;
+  }
+   
+  @keyframes cursor {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base{
+  @font-face {
+    font-family: 'D-Din';
+    src: url('D-DIN.otf');
   }
 }

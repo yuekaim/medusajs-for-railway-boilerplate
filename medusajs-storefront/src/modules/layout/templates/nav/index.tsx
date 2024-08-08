@@ -1,15 +1,18 @@
-import { headers } from "next/headers"
-import { Suspense } from "react"
-
-import { listRegions } from "@lib/data"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CartButton from "@modules/layout/components/cart-button"
-import SideMenu from "@modules/layout/components/side-menu"
+import { listRegions } from "@lib/data";
+import MobileMenu from "@modules/layout/components/mobile-menu/page";
+import CartButton from "@modules/layout/components/cart-button";
+import TitleAnimation from "@modules/layout/components/title-animation/page";
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
 
   return (
-    <div className="text-3xl flex justify-center items-center">g_sv</div>
+    <div>
+      <div className="flex sm:hidden flex-row justify-between text-3xl uppercase px-4 py-0 w-100 bg-white sticky top-0 z-50">
+        <MobileMenu />
+        <CartButton />
+      </div>
+      <div className="px-4 sm:px-8 py-8"><TitleAnimation /></div>
+    </div>
   )
 }

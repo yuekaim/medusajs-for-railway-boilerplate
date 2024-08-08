@@ -148,13 +148,12 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={variant} region={region} />
 
-        <Button
+        <button
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
-          variant="primary"
           className="w-full md:w-[50%] h-10 text-black rounded-none bg-white text-xl border-2 border-black 
-          shadow-none hover:bg-white hover:shadow-elevation-card-hover uppercase justify-between"
-          isLoading={isAdding}
+          shadow-none hover:bg-white hover:shadow-elevation-card-hover uppercase justify-between flex px-4 items-center"
+          // isLoading={isAdding}
         >
           <div>{!variant
             ? "Select variant"
@@ -162,8 +161,8 @@ export default function ProductActions({
             ? "Out of stock"
             : "Add to cart"}</div>
           <div>+</div>
-        </Button>
-        <MobileActions
+        </button>
+        {/* <MobileActions
           product={product}
           variant={variant}
           region={region}
@@ -173,7 +172,7 @@ export default function ProductActions({
           handleAddToCart={handleAddToCart}
           isAdding={isAdding}
           show={!inView}
-        />
+        /> */}
       </div>
     </>
   )
