@@ -17,7 +17,7 @@ export default async function Footer() {
   return (
     <div className="flex flex-row justify-between px-4 fixed bottom-8 w-full">
       <div className="bg-white border-black border-2 z-50 w-max px-6">
-      <ul className="flex flex-row text-sm-regular gap-6 text-ui-fg-subtle items-center justify-betweenr">
+      <ul className="flex flex-row gap-6 items-center justify-betweenr">
         {Object.entries(SideMenuItems).map(([name, href]) => {
           return (
             <li key={name}>
@@ -35,7 +35,7 @@ export default async function Footer() {
       </ul>
     </div>
     <div className="bg-white border-black border-2 z-50 w-max px-6">
-      <ul className="flex flex-row text-sm-regular gap-6 text-ui-fg-subtle items-center justify-betweenr">
+      <ul className="flex flex-row gap-6 items-center justify-betweenr">
       <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && (

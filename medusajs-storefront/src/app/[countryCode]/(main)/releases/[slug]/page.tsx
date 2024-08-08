@@ -4,6 +4,7 @@ import {client} from '../../../../../../sanity/lib/client';
 import Image from 'next/image';
 import { urlFor } from '../../../../../../sanity/lib/image';
 import { PortableText } from 'next-sanity';
+import { Container } from '@medusajs/ui';
 
 const RELEASE_QUERY = groq`*[_type == "release" && slug.current == $slug][0]`
 
@@ -21,7 +22,7 @@ export default async function ReleasePage({ params }: PageProps) {
     const { slug } = params;
     const release = await fetchRelease(slug);
     return(
-        <div className='m-4 sm:flex mt-8'>
+        <div className='content-container m-4 sm:flex mt-8'>
             <div className='mr-8'>
                 <img
                     src={urlFor(release?.covorImage?.asset?._ref || '').url()}
