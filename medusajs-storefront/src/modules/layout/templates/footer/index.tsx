@@ -10,9 +10,10 @@ import CartButton from "@modules/layout/components/cart-button"
 export default async function Footer() {
   const SideMenuItems = {
     Home: "/",
-    Store: "/store",
     Releases: "/releases",
-    Events: "/events"
+    Store: "/store",
+    Events: "/events",
+    Info: "/info"
   }
   return (
     <div>

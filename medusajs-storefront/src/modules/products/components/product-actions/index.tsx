@@ -119,7 +119,6 @@ export default function ProductActions({
       quantity: 1,
       countryCode,
     })
-
     setIsAdding(false)
   }
 
@@ -159,6 +158,8 @@ export default function ProductActions({
             ? "Select variant"
             : !inStock
             ? "Out of stock"
+            : isAdding
+            ? "Adding"
             : "Add to cart"}</div>
           <div>+</div>
         </button>

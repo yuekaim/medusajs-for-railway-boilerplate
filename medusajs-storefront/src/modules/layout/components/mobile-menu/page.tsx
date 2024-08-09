@@ -6,9 +6,10 @@ import { Transition } from "@headlessui/react"
 
 const SideMenuItems = {
     Home: "/",
-    Store: "/store",
     Releases: "/releases",
+    Store: "/store",
     Events: "/events",
+    Info: "/info",
     Account: "/account",
     Cart: "/cart",
   }

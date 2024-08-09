@@ -2,6 +2,7 @@ import React from "react"
 
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
+import TitleAnimation from "../components/title-animation/page"
 
 const Layout: React.FC<{
   children: React.ReactNode
@@ -9,7 +10,9 @@ const Layout: React.FC<{
   return (
     <div>
       <Nav />
-      <main className="relative">{children}</main>
+      <main className="relative">
+        {children}
+      </main>
       <Footer />
     </div>
   )

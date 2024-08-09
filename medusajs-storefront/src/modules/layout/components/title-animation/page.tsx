@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 const TitleAnimation = () => {
     return (
-    <div className='text-lg'>
+    <div className='text-lg w-max bg-white'>
         g_sv is <TypeAnimation
             sequence={[
                 'ground surveillance vehicle', 1000,
