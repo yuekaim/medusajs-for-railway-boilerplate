@@ -8,9 +8,9 @@ import { cache } from "react"
 import TitleAnimation from "@modules/layout/components/title-animation/page"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "g_sv",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "g_sv website",
 }
 
 const getCollectionsWithProducts = cache(
