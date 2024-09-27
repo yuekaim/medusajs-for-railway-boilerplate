@@ -33,9 +33,9 @@ export default function CheckoutLayout({
         </nav>
       </div>
       <div className="relative">{children}</div>
-      <div className="py-4 w-full flex items-center justify-center">
+      {/* <div className="py-4 w-full flex items-center justify-center">
         <MedusaCTA />
-      </div>
+      </div> */}
     </div>
   )
 }
