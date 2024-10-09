@@ -47,7 +47,7 @@ const Wrapper: React.FC<WrapperProps> = ({ cart, children }) => {
       <PayPalScriptProvider
         options={{
           // "client-id": "test",
-          "client-id": {paypalClientId}.toString(),
+          "client-id": paypalClientId,
           currency: cart?.region.currency_code.toUpperCase(),
           intent: "authorize",
           components: "buttons",
