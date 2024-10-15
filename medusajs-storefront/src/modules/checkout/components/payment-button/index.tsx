@@ -182,7 +182,7 @@ const PayPalPaymentButton = ({
     return (
       <>
         <PayPalButtons
-          style={{ layout: "horizontal" }}
+          style={{ layout: "vertical" }}
           createOrder={async () => session.data.id as string}
           onApprove={handlePayment}
           disabled={notReady || submitting || isPending}

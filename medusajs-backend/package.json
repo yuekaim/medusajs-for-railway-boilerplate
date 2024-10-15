@@ -32,8 +32,8 @@
     "@medusajs/event-bus-local": "^1.9.9",
     "@medusajs/event-bus-redis": "^1.8.14",
     "@medusajs/file-local": "^1.0.4",
-    "@medusajs/medusa": "^1.20.8",
-    "@tanstack/react-query": "5.51.11",
+    "@medusajs/medusa": "^1.20.10",
+    "@tanstack/react-query": "4.22",
     "ajv": "^8.17.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -46,6 +46,7 @@
     "medusa-payment-paypal": "^6.0.5",
     "medusa-payment-stripe": "^6.0.10",
     "medusa-plugin-mailchimp": "^1.1.51",
+    "medusa-react": "^9.0.18",
     "prism-react-renderer": "^2.3.1",
     "typeorm": "^0.3.20"
   },
