@@ -14,15 +14,10 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      <div className="px-4 sm:px-8 py-8"
-      style={{
-        'position': "fixed",
-        'zIndex': 100,
-        'mixBlendMode': 'multiply',
-        // 'textShadow' : '5px 2px 3px black',
-        // 'filter': 'blur(1px) brightness(1.3) contrast(3)'
-      }
-      }><TitleAnimation /></div>
+      <div className="px-4 sm:px-8 sm:py-8 py-2 fixed z-50 sm:top-0 sm:left-0 sm:w-max w-full bottom-0 
+      sm:bg-transparent bg-white pointer-events-none border-t-2 border-black sm:border-none sm:mix-blend-lighten">
+        <TitleAnimation />
+      </div>
       <div className="top-28 absolute w-full">
         {props.children}
       </div>

@@ -7,8 +7,8 @@ export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
 
   return (
-    <div className="sticky top-0 z-50">
-      <div className="flex sm:hidden flex-row justify-between text-3xl uppercase px-4 py-0 w-100 bg-white">
+    <div className="fixed w-full top-0 z-50">
+      <div className="flex sm:hidden flex-row justify-between text-3xl uppercase px-4 py-0 w-100 bg-white border-b-black border-b-2">
         <MobileMenu />
         <CartButton />
       </div>

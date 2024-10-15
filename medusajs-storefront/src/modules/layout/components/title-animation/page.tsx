@@ -12,7 +12,7 @@ const TitleAnimation = () => {
                 'global security and visibility', 1000,
                 'graphic sensationalism videos', 1000,
                 'global seed vault', 1000,
-                'manification of social vulnerability', 1000,
+                // 'manification of social vulnerability', 1000,
                 'group subversion and vendetta', 1000,
                 'grand shadowy networks', 1000,
                 // Types 'Three' without deleting 'Two'

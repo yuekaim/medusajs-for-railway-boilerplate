@@ -22,7 +22,7 @@ export default async function ReleasePage({ params }: PageProps) {
     const { slug } = params;
     const release = await fetchRelease(slug);
     return(
-        <div className='content-container px-4 sm:px-0 sm:m-4 sm:flex sm:mt-8'>
+        <div className='content-container px-4 sm:px-0 sm:m-4 sm:ml-0 sm:pl-4 sm:flex sm:mt-8'>
             <div className='sm:mr-8 mb-8 sm:mb-0 sm:sticky sm:top-8'>
                 <img
                     src={urlFor(release?.covorImage?.asset?._ref || '').url()}
