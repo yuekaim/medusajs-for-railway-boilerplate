@@ -32,7 +32,7 @@ export default async function ReleasePage({ params }: PageProps) {
                     className='shadow-elevation-card-rest sm:sticky top-8'
                 />
             </div>
-            <div className='text-xl pb-28'>
+            <div className='text-xl pb-28 max-w-[500px]'>
                 <div className='pb-4'>
                     <div className='pb-4'>{release?.name}</div>
                     <div>{release?.type}</div>
