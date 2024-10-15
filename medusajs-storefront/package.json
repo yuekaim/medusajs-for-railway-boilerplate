@@ -1,11 +1,13 @@
 {
-  "name": "medusa-next",
+  "name": "g_sv",
   "version": "1.0.3",
   "private": true,
-  "author": "Kasper Fabricius Kristensen <kasper@medusajs.com> & Victor Gerbrands <victor@medusajs.com> (https://www.medusajs.com)",
-  "description": "Next.js Starter to be used with Medusa server",
+  "author": "cleo miao",
+  "description": "g_sv is an multi-displinary label and platform run by TRNGS and 10_r3n for electronic fringes and media-experiments.",
   "keywords": [
-    "medusa-storefront"
+    "experimental club music",
+    "music label",
+    "deconstructed club music"
   ],
   "scripts": {
     "dev": "next dev -p 8000",
