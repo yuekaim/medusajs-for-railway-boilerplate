@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { NextRequest, NextResponse } from "next/server"
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
-const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || 'global'
+const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || ''
 
 const regionMapCache = {
   regionMap: new Map<string, Region>(),
@@ -69,12 +69,16 @@ async function getCountryCode(
 
     if (urlCountryCode && regionMap.has(urlCountryCode)) {
       countryCode = urlCountryCode
+      console.log('1')
     } else if (vercelCountryCode && regionMap.has(vercelCountryCode)) {
       countryCode = vercelCountryCode
+      console.log('2')
     } else if (regionMap.has(DEFAULT_REGION)) {
       countryCode = DEFAULT_REGION
+      console.log('3')
     } else if (regionMap.keys().next().value) {
       countryCode = regionMap.keys().next().value
+      console.log('4')
     }
 
     return countryCode

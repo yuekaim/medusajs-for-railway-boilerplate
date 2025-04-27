@@ -23,6 +23,7 @@ export async function generateStaticParams() {
   )
 
   if (!countryCodes) {
+    console.log('contrycode null')
     return null
   }
 
