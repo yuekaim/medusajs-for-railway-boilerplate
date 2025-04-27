@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { NextRequest, NextResponse } from "next/server"
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
-const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "us"
+const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || 'us'
 
 const regionMapCache = {
   regionMap: new Map<string, Region>(),
@@ -29,11 +29,15 @@ async function getRegionMap() {
       notFound()
     }
 
+    // // Create a map of country codes to regions.
+    // regions.forEach((region: Region) => {
+    //   region.countries.forEach((c) => {
+    //     regionMapCache.regionMap.set(c.iso_2, region)
+    //   })
+    // })
     // Create a map of country codes to regions.
     regions.forEach((region: Region) => {
-      region.countries.forEach((c) => {
-        regionMapCache.regionMap.set(c.iso_2, region)
-      })
+      regionMapCache.regionMap.set(region.name.toLowerCase(), region)
     })
 
     regionMapCache.regionMapUpdated = Date.now()
@@ -57,6 +61,9 @@ async function getCountryCode(
     const vercelCountryCode = request.headers
       .get("x-vercel-ip-country")
       ?.toLowerCase()
+
+    // const vercelCountryCode = navigator.geolocation.getCurrentPosition(getCountry)
+ 
 
     const urlCountryCode = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
 

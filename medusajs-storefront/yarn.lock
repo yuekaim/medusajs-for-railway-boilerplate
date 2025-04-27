@@ -2861,6 +2861,13 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@rapideditor/country-coder@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.npmjs.org/@rapideditor/country-coder/-/country-coder-5.3.0.tgz"
+  integrity sha512-bFnDQbhpUQNuMcA5da+Ct/d+6DJ0aWK3IgcxWSxDjZN0VH3h9qHUF3az/g+mSXdXQNyvOtucMMCpTn+mDemb/Q==
+  dependencies:
+    which-polygon "^2.2.1"
+
 "@react-aria/datepicker@^3.5.0":
   version "3.8.1"
   resolved "https://registry.npmjs.org/@react-aria/datepicker/-/datepicker-3.8.1.tgz"
@@ -3570,17 +3577,17 @@
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
-"@tanstack/query-core@4.36.1":
-  version "4.36.1"
-  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.36.1.tgz"
-  integrity sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==
+"@tanstack/query-core@4.22.4":
+  version "4.22.4"
+  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.22.4.tgz"
+  integrity sha512-t79CMwlbBnj+yL82tEcmRN93bL4U3pae2ota4t5NN2z3cIeWw74pzdWrKRwOfTvLcd+b30tC+ciDlfYOKFPGUw==
 
-"@tanstack/react-query@^4.22.0":
-  version "4.36.1"
-  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.36.1.tgz"
-  integrity sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw==
+"@tanstack/react-query@^4.22.0", "@tanstack/react-query@4.22":
+  version "4.22.4"
+  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.22.4.tgz"
+  integrity sha512-e5j5Z88XUQGeEPMyz5XF1V0mMf6Da+6URXiTpZfUb9nuHs2nlNoA+EoIvnhccE5b9YT6Yg7kARhn2L7u94M/4A==
   dependencies:
-    "@tanstack/query-core" "4.36.1"
+    "@tanstack/query-core" "4.22.4"
     use-sync-external-store "^1.2.0"
 
 "@tanstack/react-table@^8.16.0":
@@ -8615,6 +8622,11 @@ lilconfig@^2.0.5, lilconfig@^2.1.0:
   resolved "https://registry.npmjs.org/lilconfig/-/lilconfig-2.1.0.tgz"
   integrity sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==
 
+lineclip@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/lineclip/-/lineclip-1.1.5.tgz"
+  integrity sha512-KlA/wRSjpKl7tS9iRUdlG72oQ7qZ1IlVbVgHwoO10TBR/4gQ86uhKow6nlzMAJJhjCWKto8OeoAzzIzKSmN25A==
+
 lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
@@ -10334,6 +10346,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+quickselect@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/quickselect/-/quickselect-1.1.1.tgz"
+  integrity sha512-qN0Gqdw4c4KGPsBOQafj6yj/PA6c/L63f6CaZ/DCF/xF4Esu3jVmKLUDYxghFx8Kb/O7y9tI7x2RjTSXwdK1iQ==
+
 raf@^3.4.1:
   version "3.4.1"
   resolved "https://registry.npmjs.org/raf/-/raf-3.4.1.tgz"
@@ -10376,6 +10393,13 @@ raw-body@2.5.2:
     http-errors "2.0.0"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+rbush@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/rbush/-/rbush-2.0.2.tgz"
+  integrity sha512-XBOuALcTm+O/H8G90b6pzu6nX6v2zCKiFG4BJho8a+bY6AER6t8uQUZdi5bomQc0AprCWhEGa7ncAbbRap0bRA==
+  dependencies:
+    quickselect "^1.0.1"
 
 react-clientside-effect@^1.2.6:
   version "1.2.6"
@@ -12715,6 +12739,14 @@ which-module@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/which-module/-/which-module-2.0.1.tgz"
   integrity sha512-iBdZ57RDvnOR9AGBhML2vFZf7h8vmBjhoaZqODJBFWHVtKkDmKuHai3cx5PgVMrX5YDNp27AofYbAwctSS+vhQ==
+
+which-polygon@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npmjs.org/which-polygon/-/which-polygon-2.2.1.tgz"
+  integrity sha512-RlpWbqz12OMT0r2lEHk7IUPXz0hb1L/ZZsGushB2P2qxuBu1aq1+bcTfsLtfoRBYHsED6ruBMiwFaidvXZfQVw==
+  dependencies:
+    lineclip "^1.1.5"
+    rbush "^2.0.1"
 
 which-typed-array@^1.1.11, which-typed-array@^1.1.9:
   version "1.1.11"

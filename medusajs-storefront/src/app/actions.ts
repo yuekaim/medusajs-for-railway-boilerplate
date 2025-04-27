@@ -12,6 +12,8 @@ import { getRegion, updateCart } from "@lib/data"
  * @param countryCode
  */
 export async function updateRegion(countryCode: string, currentPath: string) {
+  console.log("updateRegion called with:", countryCode, currentPath);
+
   const cartId = cookies().get("_medusa_cart_id")?.value
   const region = await getRegion(countryCode)
 
