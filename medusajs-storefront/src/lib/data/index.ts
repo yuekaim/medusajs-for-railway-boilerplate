@@ -368,32 +368,53 @@ const regionMap = new Map<string, Region>()
 
 export const getRegion = cache(async function (countryCode: string) {
   try {
-    if (regionMap.has(countryCode)) {
-      return regionMap.get(countryCode)
+    // Normalize country code to uppercase
+    const normalizedCC = countryCode?.toUpperCase();
+
+    // Check cache first with normalized code
+    if (normalizedCC && regionMap.has(normalizedCC)) {
+      return regionMap.get(normalizedCC);
     }
 
-    const regions = await listRegions()
-
-    if (!regions) {
-      return null
+    // Fetch fresh regions list
+    const regions = await listRegions();
+    if (!regions?.length) {
+      console.error("No regions found in Medusa backend");
+      return null;
     }
+
+    // Clear and rebuild region map
+    regionMap.clear();
+    let defaultRegion: Region | null = null;
 
     regions.forEach((region) => {
+      // Store first region as fallback default
+      if (!defaultRegion) defaultRegion = region;
+      
+      // Map all country codes to this region
       region.countries.forEach((c) => {
-        regionMap.set(c.iso_2, region)
-      })
-    })
+        regionMap.set(c.iso_2.toUpperCase(), region);
+      });
 
-    const region = countryCode
-      ? regionMap.get(countryCode)
-      : regionMap.get("us")
+      // Special case for global region
+      if (region.name.toLowerCase() === "global") {
+        regionMap.set("GLOBAL", region);
+      }
+    });
 
-    return region
+    // Try to find region by country code
+    const foundRegion = normalizedCC 
+      ? regionMap.get(normalizedCC)
+      : defaultRegion;
+
+    // Fallback to global or first region
+    return foundRegion || regionMap.get("GLOBAL") || defaultRegion;
+
   } catch (e: any) {
-    console.log(e.toString())
-    return null
+    console.error("Region fetch error:", e.toString());
+    return null;
   }
-})
+});
 
 // Product actions
 export const getProductsById = cache(async function ({

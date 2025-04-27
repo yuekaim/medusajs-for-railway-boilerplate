@@ -23,7 +23,6 @@ export async function generateStaticParams() {
   )
 
   if (!countryCodes) {
-    console.log('contrycode null')
     return null
   }
 
@@ -103,7 +102,8 @@ export default async function ProductPage({ params }: Props) {
     <ProductTemplate
       product={pricedProduct}
       region={region}
-      countryCode={params.countryCode}
+      // countryCode={params.countryCode}
+      countryCode="us"
     />
   )
 }

@@ -25,7 +25,8 @@ export default async function StorePage({ searchParams, params }: Params) {
     <StoreTemplate
       sortBy={sortBy}
       page={page}
-      countryCode={params.countryCode}
+      // countryCode={params.countryCode}
+      countryCode='us'
     />
   )
 }

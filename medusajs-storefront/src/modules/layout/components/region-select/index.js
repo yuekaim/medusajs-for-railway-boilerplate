@@ -13,7 +13,7 @@ const RegionsWrapper = () => {
       queryClientProviderProps={{ client: queryClient }}
       baseUrl={BASE_URL}
     >
-      <Regions />
+      {/* <Regions /> */}
     </MedusaProvider>
   )
 }
