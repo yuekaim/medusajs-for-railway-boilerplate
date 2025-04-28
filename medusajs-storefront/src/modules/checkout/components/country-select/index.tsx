@@ -36,11 +36,13 @@ const CountrySelect = forwardRef<
       defaultValue={defaultValue}
       {...props}
     >
-      {countryOptions.map(({ value, label }, index) => (
-        <option key={index} value={value}>
-          {label}
-        </option>
-      ))}
+      {countryOptions
+        .sort((a, b) => a.label.localeCompare(b.label))
+        .map(({ value, label }, index) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
     </NativeSelect>
   )
 })
